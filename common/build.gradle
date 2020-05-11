@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -39,10 +40,21 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // implementation project(':base')
-    api 'com.lcy.base:yyg-base:0.0.1'
+    api 'com.yyg:base:0.0.1'
     kapt rootProject.ext.annotationProcessorLibs
     //  鲁班图片压缩
     api 'top.zibin:Luban-turbo:1.0.0'
     // 蒲公英
     api 'com.pgyersdk:sdk:3.0.10'
+}
+
+publish {
+    artifactId = 'common'
+    uploadName = 'common'
+    publishVersion = '0.0.1'
+    desc = 'common'
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    website = rootProject.website
+    licences = rootProject.licences
 }
