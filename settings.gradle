@@ -1,0 +1,4 @@
+rootProject.name='yyg-base'
+include ':app'
+include ':base'
+include ':common'

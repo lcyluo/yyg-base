@@ -1,0 +1,26 @@
+ext {
+
+    android = [
+            applicationId    : "com.yyg.driver",
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 19,
+            targetSdkVersion : 28,
+            versionCode      : 2,
+            versionName      : "1.0.0"
+    ]
+
+
+    dependVersion = [
+            daggerVersion       : "2.20",
+            component_version   : "1.7.6.1"
+    ]
+
+    compilers = [
+            //------ annotationProcessor相关 ---------
+            daggerCompiler   : "com.google.dagger:dagger-compiler:$dependVersion.daggerVersion",
+            componentCompiler: "com.github.xiaojinzi123.Component:component-compiler:$dependVersion.component_version",
+    ]
+
+    annotationProcessorLibs = compilers.values()
+}

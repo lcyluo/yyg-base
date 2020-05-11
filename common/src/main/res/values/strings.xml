@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">common</string>
+    <string name="title_activity_bridge_web_view">网页</string>
+    <string name="common_application_not_installed">您还未安装相关客户端！</string>
+
+    <string name="common_no_data">暂无数据</string>
+    <string name="common_net_error">网络走丢了，刷新试试</string>
+    <string name="common_service_error">服务器连接失败</string>
+
+    <string name="common_new_version_title">检测到新版本</string>
+    <string name="common_new_version_error">检测版本信息失败</string>
+    <string name="common_new_version_no_update">当前已是最新版本</string>
+    <string name="common_new_version_download">下载</string>
+    <string name="common_code_interval">%1$d秒后获取</string>
+    <string name="common_get_code">获取验证码</string>
+
+</resources>

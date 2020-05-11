@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="common_style_submit_btn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/common_submit_btn_height</item>
+        <item name="android:background">@drawable/common_bg_btn_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/base_core_sp_15</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--输入框-->
+    <style name="common_style_common_edit">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/common_submit_btn_height</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:paddingLeft">@dimen/base_core_dp_12</item>
+        <item name="android:paddingRight">@dimen/base_core_dp_12</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/base_core_color_33</item>
+        <item name="android:textColorHint">@color/base_core_color_d8</item>
+        <item name="android:textSize">@dimen/base_core_sp_15</item>
+        <item name="android:inputType">text</item>
+        <item name="android:drawablePadding">@dimen/base_core_dp_10</item>
+    </style>
+
+</resources>

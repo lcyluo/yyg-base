@@ -1,0 +1,92 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // 配置业务模块的模块名称
+                arguments = ["HOST": "base"]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_ENABLE", "true"
+            buildConfigField "String", "API_HOST", "\"${API_HOST_DEV}\""
+        }
+
+        release {
+            buildConfigField "boolean", "LOG_ENABLE", "false"
+            buildConfigField "String", "API_HOST", "\"${API_HOST_ONLINE}\""
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // 基础库
+    api("com.lcy.base:core:1.2.6") {
+        exclude group: 'me.yokeyword', module: 'fragmentation'
+        exclude group: 'com.ogaclejapan.smarttablayout', module: 'library'
+        exclude group: 'com.ogaclejapan.smarttablayout', module: 'utils-v4'
+    }
+    // fragment管理框架
+    api 'me.yokeyword:fragmentationx:1.0.1'
+    // TabLayout框架
+    api 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+    api 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
+    // 图片选择
+    api "com.lcy.base:easyPhotos:1.0.5"
+    // 组件化框架
+    api "com.github.xiaojinzi123.Component:component-impl-rx:$dependVersion.component_version"
+    kapt "com.github.xiaojinzi123.Component:component-compiler:$dependVersion.component_version"
+    // 日志框架
+    implementation 'com.orhanobut:logger:2.2.0'
+    // 腾讯X5Web
+    api 'com.tencent.tbs.tbssdk:sdk:43903'
+    // 阴影
+    api 'com.github.lihangleo2:ShadowLayout:2.1.4'
+    // 定位
+    api 'com.amap.api:location:4.9.0'
+    // 地图
+    api 'com.amap.api:map3d:6.8.0'
+}
+
+publish {
+    artifactId = 'base'
+    uploadName = 'base'
+    publishVersion = '0.0.1'
+    desc = 'base'
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    website = rootProject.website
+    licences = rootProject.licences
+}

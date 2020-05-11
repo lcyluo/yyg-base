@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yyg.common">
+
+    <application>
+        <activity
+            android:name=".ui.activity.BridgeWebViewActivity"
+            android:label="@string/title_activity_bridge_web_view"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseCoreTheme.NoActionBar" />
+    </application>
+</manifest>

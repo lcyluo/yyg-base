@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="core_toolbar_height">@dimen/base_core_dp_44</dimen>
+</resources>

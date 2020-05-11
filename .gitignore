@@ -1,0 +1,16 @@
+*.iml
+*.jks
+*.apk
+*.log
+/app
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+.navigation/
+# lint
+lint/

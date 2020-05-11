@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_submit_btn_height">44dp</dimen>
+    <integer name="common_mobile_length">11</integer>
+    <dimen name="common_layout_padding_top">8dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>
