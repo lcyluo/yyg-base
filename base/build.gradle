@@ -68,8 +68,7 @@ dependencies {
     // 组件化框架
     api "com.github.xiaojinzi123.Component:component-impl-rx:$dependVersion.component_version"
     kapt "com.github.xiaojinzi123.Component:component-compiler:$dependVersion.component_version"
-    // 日志框架
-    implementation 'com.orhanobut:logger:2.2.0'
+
     // 腾讯X5Web
     api 'com.tencent.tbs.tbssdk:sdk:43903'
     // 阴影
@@ -83,7 +82,7 @@ dependencies {
 //publish {
 //    artifactId = 'base'
 //    uploadName = 'base'
-//    publishVersion = '0.0.1'
+//    publishVersion = '0.0.2'
 //    desc = 'base'
 //    userOrg = rootProject.userOrg
 //    groupId = rootProject.groupId

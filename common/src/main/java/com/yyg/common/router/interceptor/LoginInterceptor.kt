@@ -1,14 +1,14 @@
 package com.yyg.common.router.interceptor
 
 import android.annotation.SuppressLint
-import com.yyg.common.router.InterceptorConfig
-import com.yyg.common.router.RouterConfig
-import com.yyg.common.router.service.UserService
+import com.lcy.base.core.utils.SpUtil
 import com.xiaojinzi.component.anno.InterceptorAnno
 import com.xiaojinzi.component.error.ServiceNotFoundException
 import com.xiaojinzi.component.impl.RouterInterceptor
 import com.xiaojinzi.component.impl.RxRouter
-import com.xiaojinzi.component.impl.service.ServiceManager
+import com.yyg.common.constant.CommonConstants
+import com.yyg.common.router.InterceptorConfig
+import com.yyg.common.router.RouterConfig
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -34,12 +34,12 @@ class LoginInterceptor : RouterInterceptor {
             return
         }
         val context = chain.request().rawContext
-        val userService = ServiceManager.get(UserService::class.java)
-        if (context == null || userService == null) {
-            chain.callback().onError(ServiceNotFoundException("can't found UserService"))
+        if (context == null) {
+            chain.callback().onError(ServiceNotFoundException("context is null"))
             return
         }
-        if (userService.isLogin()) {
+        val isLogin = SpUtil.getInstance().getBoolean(CommonConstants.KEY_SP_LOGIN_STATE, false)
+        if (isLogin) {
             chain.proceed(chain.request())
             return
         }

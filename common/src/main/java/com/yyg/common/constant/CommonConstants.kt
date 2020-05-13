@@ -22,6 +22,9 @@ object CommonConstants {
     /** 登录当前用户ID **/
     const val KEY_SP_LOGIN_USER_ID = "sp_login_user_id"
 
+    /** 用户token **/
+    const val KEY_SP_LOGIN_USER_TOKEN = "sp_login_user_token"
+
     /** 登录当前用户团队ID **/
     const val KEY_SP_LOGIN_TEAM_ID = "sp_login_team_id"
 

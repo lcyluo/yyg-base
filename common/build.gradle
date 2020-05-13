@@ -40,18 +40,20 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // implementation project(':base')
-    api 'com.yyg:base:0.0.1'
+    api 'com.yyg:base:0.0.2'
     kapt rootProject.ext.annotationProcessorLibs
     //  鲁班图片压缩
     api 'top.zibin:Luban-turbo:1.0.0'
     // 蒲公英
     api 'com.pgyersdk:sdk:3.0.10'
+    // 日志框架
+    implementation 'com.orhanobut:logger:2.2.0'
 }
 
 publish {
     artifactId = 'common'
     uploadName = 'common'
-    publishVersion = '0.0.1'
+    publishVersion = '0.0.2'
     desc = 'common'
     userOrg = rootProject.userOrg
     groupId = rootProject.groupId

@@ -1,4 +1,4 @@
-package com.yyg.core.utils
+package com.yyg.common.util
 
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger

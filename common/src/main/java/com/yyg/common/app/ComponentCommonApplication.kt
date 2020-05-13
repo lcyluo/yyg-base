@@ -6,7 +6,7 @@ import com.yyg.common.data.db.LibraryModule
 import com.xiaojinzi.component.anno.ModuleAppAnno
 import com.xiaojinzi.component.application.IComponentApplication
 import com.yyg.common.data.db.ext.RealmConfigStore
-import com.yyg.core.utils.LogUtil
+import com.yyg.common.util.LogUtil
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
