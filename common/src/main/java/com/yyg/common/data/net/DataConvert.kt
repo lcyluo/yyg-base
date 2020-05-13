@@ -11,7 +11,7 @@ import io.reactivex.functions.Function
 class DataConvert<T> : Function<DataResponse<T>, Flowable<T>> {
     override fun apply(t: DataResponse<T>): Flowable<T> {
         if (t.code != ApiConstants.SUCCESS || t.data == null) {
-            return Flowable.error(ApiException(t.code, t.message))
+            return Flowable.error(ApiException(t.code, t.message ?: "未知错误"))
         }
         return Flowable.just(t.data)
     }
@@ -20,7 +20,7 @@ class DataConvert<T> : Function<DataResponse<T>, Flowable<T>> {
 class SuccessConvert : Function<BaseResponse, Flowable<Boolean>> {
     override fun apply(t: BaseResponse): Flowable<Boolean> {
         if (t.code != 0) {
-            return Flowable.error(ApiException(t.code, t.message))
+            return Flowable.error(ApiException(t.code, t.message ?: "未知错误"))
         }
         return Flowable.just(true)
     }

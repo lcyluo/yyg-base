@@ -12,6 +12,7 @@ abstract class BaseApplication : CoreApplication() {
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         // 初始化App接口注入
         initAppInjection()
         // 初始化腾讯X5
