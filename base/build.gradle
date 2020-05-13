@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -79,13 +79,13 @@ dependencies {
     api 'com.amap.api:map3d:6.8.0'
 }
 
-publish {
-    artifactId = 'base'
-    uploadName = 'base'
-    publishVersion = '0.0.4'
-    desc = 'base'
-    userOrg = rootProject.userOrg
-    groupId = rootProject.groupId
-    website = rootProject.website
-    licences = rootProject.licences
-}
+//publish {
+//    artifactId = 'base'
+//    uploadName = 'base'
+//    publishVersion = '0.0.4'
+//    desc = 'base'
+//    userOrg = rootProject.userOrg
+//    groupId = rootProject.groupId
+//    website = rootProject.website
+//    licences = rootProject.licences
+//}
